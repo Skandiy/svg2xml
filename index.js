@@ -59,5 +59,3 @@ function main() {
 
 // Запуск основной функции
 main();
-
-export default svgToXml();
