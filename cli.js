@@ -10,24 +10,20 @@ const svgPath = path.join(process.cwd(), 'resources', 'splash.svg');
 const svgoConfigPath = path.join(process.cwd(), 'node_modules', 'svg2xml', 'svgo.config.js');
 
 // Команда для выполнения `svgo`
-const svgoCommand = `npx svgo --multipass --config ${svgoConfigPath} --pretty ${svgPath} -o ${svgPath}`;
-
-console.log();
+const svgoCommand = `npx svgo --multipass --config ${svgoConfigPath} --pretty ${svgPath} -o -`;
 
 // Выполняем команду `svgo`
-exec(svgoCommand, (error, stdout, stderr) => {
+exec(svgoCommand, { stdio: 'pipe' }, (error, stdout, stderr) => {
   if (error) {
-    console.error(`Error executing svgo: ${error.message}`);
+    console.error('\x1b[31m%s\x1b[0m', `Error executing svgo: ${error.message}`);
     return;
   }
 
   if (stderr) {
-    console.error(`svgo stderr: ${stderr}`);
+    console.error('\x1b[31m%s\x1b[0m', `svgo stderr: ${stderr}`);
   }
-
-  console.log(`svgo stdout: ${stdout}`);
 
   // Запускаем основной код после успешного выполнения `svgo`
   const mainFunction = require('./index');
-  mainFunction();
+  mainFunction(stdout);
 });

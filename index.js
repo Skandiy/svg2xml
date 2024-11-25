@@ -32,34 +32,25 @@ function svgToXml(svg) {
 }
 
 // Основная функция для чтения и записи файлов
-function main() {
-    const svgFilePath = path.join(process.cwd(), 'resources', 'splash.svg');
-    const xmlFilePath = path.join(process.cwd(), 'resources', 'android', 'xml', 'splash.xml');
+function main(svg) {
+  const xmlFilePath = path.join(process.cwd(), 'resources', 'android', 'xml', 'splash.xml');
 
-  // Чтение SVG файла
-  fs.readFile(svgFilePath, 'utf8', (err, svgData) => {
+  // Преобразование SVG в XML
+  const xmlData = svgToXml(svg);
+
+  // Запись XML в файл
+  fs.writeFile(xmlFilePath, xmlData, 'utf8', (err) => {
     if (err) {
-      console.error('Не удалось прочитать SVG файл:', err);
-      return;
+      console.error('\x1b[31m%s\x1b[0m', 'Не удалось записать XML файл:', err);
+    } else {
+      console.log('\x1b[32m%s\x1b[0m', 'SVG успешно преобразован в XML и сохранен в', xmlFilePath);
     }
-
-    // Преобразование SVG в XML
-    const xmlData = svgToXml(svgData);
-
-    // Запись XML в файл
-    fs.writeFile(xmlFilePath, xmlData, 'utf8', (err) => {
-      if (err) {
-        console.error('Не удалось записать XML файл:', err);
-      } else {
-        console.log('SVG успешно преобразован в XML и сохранен в ', xmlFilePath);
-      }
-    });
   });
 }
 
 // index.js
-module.exports = function() {
+module.exports = function(svg) {
   // Запуск основной функции
-  main();
+  main(svg);
 };
 
