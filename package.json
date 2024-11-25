@@ -1,0 +1,27 @@
+{
+  "name": "svg2xml",
+  "version": "1.0.0",
+  "description": "Преобразует svg лого в формат xml для отображения в виде splash на андроиде",
+  "main": "./index.js",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "xmldom": "^0.6.0"
+  },
+  "keywords": [
+    "svg2xml"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skandiy/svg2xml.git"
+  },
+  "author": "Anton Churikov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Skandiy/svg2xml/issues"
+  },
+  "homepage": "https://github.com/Skandiy/svg2xml#readme"
+}
