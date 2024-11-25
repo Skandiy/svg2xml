@@ -4,7 +4,7 @@
   "description": "Преобразует svg лого в формат xml для отображения в виде splash на андроиде",
   "main": "./index.js",
   "bin": {
-    "mycli": "./cli.js"
+    "svg2xml": "./cli.js"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
