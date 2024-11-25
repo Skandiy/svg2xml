@@ -34,7 +34,7 @@ function svgToXml(svg) {
 // Основная функция для чтения и записи файлов
 function main() {
     const svgFilePath = path.join(process.cwd(), 'resources', 'splash.svg');
-    const xmlFilePath = path.join(process.cwd(), 'resources', 'splash.xml');
+    const xmlFilePath = path.join(process.cwd(), 'resources', 'android', 'xml', 'splash.xml');
 
   // Чтение SVG файла
   fs.readFile(svgFilePath, 'utf8', (err, svgData) => {
