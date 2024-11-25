@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Преобразует svg лого в формат xml для отображения в виде splash на андроиде",
   "main": "./index.js",
+  "bin": {
+    "mycli": "./cli.js"
+  },
   "dependencies": {
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
@@ -12,7 +15,8 @@
     "svg2xml"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "res": "svgo --multipass --pretty resources/splash.svg -o resources/splash.svg && node svg2xml"
   },
   "repository": {
     "type": "git",

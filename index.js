@@ -57,5 +57,9 @@ function main() {
   });
 }
 
-// Запуск основной функции
-main();
+// index.js
+module.exports = function() {
+  // Запуск основной функции
+  main();
+};
+
