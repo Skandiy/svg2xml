@@ -7,7 +7,7 @@ const path = require('path');
 const svgPath = path.join(process.cwd(), 'resources', 'splash.svg');
 
 // Команда для выполнения `svgo`
-const svgoCommand = `svgo --multipass --pretty ${svgPath} -o ${svgPath}`;
+const svgoCommand = `npx svgo --multipass --pretty ${svgPath} -o ${svgPath}`;
 
 // Выполняем команду `svgo`
 exec(svgoCommand, (error, stdout, stderr) => {
