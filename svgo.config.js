@@ -17,7 +17,7 @@ module.exports = {
         rgb2hex: true,
         convertCase: "lower",
         shorthex: false,
-        shortname: true
+        shortname: false
       }
     },
     {

@@ -1,6 +1,6 @@
 {
   "name": "svg2xml",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Преобразует svg лого в формат xml для отображения в виде splash на андроиде",
   "main": "./index.js",
   "bin": {
@@ -9,7 +9,7 @@
   "dependencies": {
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
-    "svgo": "^3.3.2",
+    "svgo": "^4.0.0",
     "xmldom": "^0.6.0"
   },
   "keywords": [
